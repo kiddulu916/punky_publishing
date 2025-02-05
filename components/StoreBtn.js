@@ -17,10 +17,10 @@ const StoreBtn = () => {
 
         <Image
           src={'/rounded-text.png'}
-          width={220}
-          height={220}
+          width={175}
+          height={175}
           alt='rounded text'
-          className='animate-spin-slow w-full h-full max-w-[220px] max-h-[220px]'
+          className='animate-spin-slow w-full h-full max-w-[175px] max-h-[175px]'
         />
         <HiArrowRight className='absolute text-4xl group-hover:translate-x-2 transition-all duration-300' />
       </Link>
