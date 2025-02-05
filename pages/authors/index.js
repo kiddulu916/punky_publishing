@@ -17,25 +17,29 @@ import {
 
 
 //  data
-const aboutData = [
+const authorsData = [
   {
     title: 'skills',
     info: [
       {
         title: 'Web Development',
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+          <FaHtml5 key="html5" />,
+          <FaCss3 key="css3" />,
+          <FaJs key="js" />,
+          <FaReact key="react" />,
+          <SiNextdotjs key="nextjs" />,
+          <SiFramer key="framer" />,
+          <FaWordpress key="wordpress" />,
         ],
       },
       {
         title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        icons: [
+          <FaFigma key="figma" />, 
+          <SiAdobexd key="xd" />, 
+          <SiAdobephotoshop key="photoshop" />
+        ],
       },
     ],
   },
@@ -88,8 +92,8 @@ const aboutData = [
   },
 ];
 
-const About = () => {
-  return <div>About</div>;
+const Authors = () => {
+  return <div>Authors</div>;
 };
 
-export default About;
+export default Authors;
