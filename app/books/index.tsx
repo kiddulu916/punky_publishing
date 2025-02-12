@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import BooksPage from './page';
-import { bookTestimonials } from '../../data/bookTestimonials';
+import { bookTestimonials } from '../../lib/bookTestimonials';
 
 const BookPageContainer: FC = () => {
   // Book data that would typically come from a CMS or API

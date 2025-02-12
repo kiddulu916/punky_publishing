@@ -1,5 +1,14 @@
 // fonts
 import {Sora} from 'next/font/google'
+import { Metadata } from 'next'
+import React, { FC, ReactNode } from 'react';
+import "../../styles/globals.css";
+
+// metadata
+export const metadata: Metadata = {
+  title: 'Punky Publishing',
+  description: 'Publishing site for books and authors',
+}
 
 // font settings
 const sora = Sora({
@@ -13,21 +22,26 @@ import Nav from '../components/Nav';
 import Header from '../components/Header';
 import TopLeftImg from '../components/TopLeftImg';
 
-// Define the type for Layout props
-type LayoutProps = {
-  children: React.ReactNode
-};
+interface LayoutProps {
+  children: ReactNode;
+}
 
-const Layout = ({ children }: LayoutProps) => {
-  return ( 
-    <div 
-      className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
-    >
-      <TopLeftImg />
-      <Nav />
-      <Header />
-      {children}
-    </div>
+const Layout: FC<LayoutProps> = ({ children }) => {
+  return (
+    <html lang="en">
+      <body>
+        <div 
+          className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
+          >
+          <TopLeftImg />
+          <Nav />
+          <Header />
+          <main className="flex-grow">
+            {children}
+          </main>
+        </div>
+      </body>
+    </html> 
   );
 };
 

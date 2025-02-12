@@ -1,8 +1,8 @@
 import '../app/globals.css';
 
 // components
-import Layout from '../app/Layout';
-import Transition from '../components/Transition';
+import Layout from './layout';
+import Transition from '../lib/Transition';
 
 // router
 import { useRouter } from 'next/router';
