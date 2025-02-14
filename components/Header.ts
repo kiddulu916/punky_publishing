@@ -1,20 +1,23 @@
-// React
-import React, { FC } from "react";
+import React from "react";
 
-// next image & link
+// next image
+import Image from "next/image";
+
+// next link
 import Link from "next/link";
 
-// Logo Component
-import Logo from "./Logo"
-
-const Header: FC = () => {
+const Header = () => {
   return (
     <header className="absolute z-30 w-full -top-20 xl:-top-0 flex items-center px-0 xl:px-0 xl:h-[90px]">
       <div className="container mx-auto">
         <div className='flex flex-col lg:flex-row justify-between items-center gap-y-6 py-8'>
           {/* logo */}
           <Link href={'/'}>
+<<<<<<< HEAD:components/Header.tsx
             <Logo
+=======
+            <Image
+>>>>>>> parent of 4897b46 (converted to typescript):components/Header.ts
               src={'/logo.png'}
               width={220}
               height={120}

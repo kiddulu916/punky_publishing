@@ -1,6 +1,7 @@
 // fonts
 <<<<<<< HEAD:app/Layout.tsx
 import {Sora} from 'next/font/google'
+<<<<<<< HEAD:components/Layout.js
 import { Metadata } from 'next'
 import React, { FC, ReactNode } from 'react';
 
@@ -12,6 +13,8 @@ export const metadata: Metadata = {
 =======
 import {Sora} from '@next/font/google'
 >>>>>>> parent of 812db8e (converted to typescript):components/Layout.js
+=======
+>>>>>>> parent of 4897b46 (converted to typescript):app/Layout.tsx
 
 // font settings
 const sora = Sora({
@@ -25,6 +28,7 @@ import Nav, { navData } from '../components/Nav';
 import Header from '../components/Header';
 import TopLeftImg from '../components/TopLeftImg';
 
+<<<<<<< HEAD:components/Layout.js
 <<<<<<< HEAD:app/Layout.tsx
 interface LayoutProps {
   children: ReactNode;
@@ -55,6 +59,14 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     </html> 
 =======
 const Layout = ({children}) => {
+=======
+// Define the type for Layout props
+type LayoutProps = {
+  children: React.ReactNode
+};
+
+const Layout = ({ children }: LayoutProps) => {
+>>>>>>> parent of 4897b46 (converted to typescript):app/Layout.tsx
   return ( 
     <div 
       className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
@@ -64,7 +76,10 @@ const Layout = ({children}) => {
       <Header />
       {children}
     </div>
+<<<<<<< HEAD:components/Layout.js
 >>>>>>> parent of 812db8e (converted to typescript):components/Layout.js
+=======
+>>>>>>> parent of 4897b46 (converted to typescript):app/Layout.tsx
   );
 };
 

@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
+// links
 import Link from "next/link";
 
 // icons
 import { RiMastercardLine, RiAmazonLine, RiFacebookLine } from "react-icons/ri";
 
-const Socials: FC = () => {
+const Socials = () => {
   return (
     <div className='flex items-center gap-x-5 text-lg'>
       <Link href={'https://www.facebook.com/punky.publishing'} className='hover:text-accent transition-all duration-300'>
