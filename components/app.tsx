@@ -1,8 +1,13 @@
-import '../app/globals.css';
+import '../styles/globals.css';
 
 // components
+<<<<<<<< HEAD:components/app.tsx
 import Layout from './layout';
 import Transition from '../lib/Transition';
+========
+import Layout from '../components/Layout';
+import Transition from '../components/Transition';
+>>>>>>>> parent of 812db8e (converted to typescript):pages/_app.js
 
 // router
 import { useRouter } from 'next/router';
@@ -11,10 +16,7 @@ import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
 
-// Import AppProps type from next/app
-import type { AppProps } from 'next/app';
-
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }) {
   const router = useRouter();
   return (
     <Layout>

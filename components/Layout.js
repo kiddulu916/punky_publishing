@@ -1,4 +1,5 @@
 // fonts
+<<<<<<< HEAD:app/Layout.tsx
 import {Sora} from 'next/font/google'
 import { Metadata } from 'next'
 import React, { FC, ReactNode } from 'react';
@@ -8,6 +9,9 @@ export const metadata: Metadata = {
   title: 'Punky Publishing',
   description: 'Publishing site for books and authors',
 }
+=======
+import {Sora} from '@next/font/google'
+>>>>>>> parent of 812db8e (converted to typescript):components/Layout.js
 
 // font settings
 const sora = Sora({
@@ -21,6 +25,7 @@ import Nav, { navData } from '../components/Nav';
 import Header from '../components/Header';
 import TopLeftImg from '../components/TopLeftImg';
 
+<<<<<<< HEAD:app/Layout.tsx
 interface LayoutProps {
   children: ReactNode;
 }
@@ -48,6 +53,18 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         </div>
       </body>
     </html> 
+=======
+const Layout = ({children}) => {
+  return ( 
+    <div 
+      className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
+    >
+      <TopLeftImg />
+      <Nav />
+      <Header />
+      {children}
+    </div>
+>>>>>>> parent of 812db8e (converted to typescript):components/Layout.js
   );
 };
 
