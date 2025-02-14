@@ -15,7 +15,7 @@ const Header: FC = () => {
           {/* logo */}
           <Link href={'/'}>
             <Logo
-              src={'../public/logo.png'}
+              src={'/logo.png'}
               width={220}
               height={120}
               alt='Logo'

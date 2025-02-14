@@ -26,7 +26,7 @@ const About: FC = () => {
       
       <div className='absolute -bottom-15 left-0 xl:left-[50%] rotate-12 mix-blend-color-dodge animate-pulse duration-75 z-10'>
         <Bulb 
-          src={'../../public/bulb.png'} 
+          src={'/bulb.png'} 
           width={260}
           height={200}
           className='w-full h-full '

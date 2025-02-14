@@ -46,13 +46,13 @@ export const navData: NavLink[] = [
   },
 ];
 
-const Nav: FC<NavProps> = ({ links }) => {
+const Nav: FC<NavProps> = () => {
   const pathname = usePathname();
   return ( 
     <nav className='flex flex-col items-center xl:justify-center gap-y-4 fixed h-[60px] xl:h-auto bottom-0 mt-auto xl:right-[2%] z-50 top-0 w-full xl:w-16 xl:max-w-md'>
       {/* inner */}
       <div className='flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[80px] xl:h-max py-8 bg-white/10 backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full'>
-        {links.map((link, index) => (
+        {navData.map((link, index) => (
           <Link 
             key={index}
             className={`${link.path === pathname && 'text-accent'} relative flex items-center group hover:text-accent transition-all duration-300`} 

@@ -1,26 +1,14 @@
+"use client"
+
 // components
 import React, { FC } from 'react';
 import ParticlesContainer from "../components/ParticlesContainer";
-import StoreBtn from "../components/StoreBtn";
 import Avatar from "../components/Avatar";
 import { AnimatedSection } from "../lib/AnimatedSection";
-import "../app/globals.css";
-import TopLeftImg from '../components/TopLeftImg';
 
 const Home: FC = () => {
   return (
     <div className='bg-primary/60 h-full relative'>
-      {/* Top Left Image */}
-      <TopLeftImg
-        src='../public/top-left-img.png' 
-        width={400} 
-        height={400} 
-        alt='top left image'
-        priority={true}
-        className='absolute top-0 left-0'
-      />
-      
-
       {/* text */}
       <div className='w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10'>
         <div className='text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto'>
@@ -38,17 +26,10 @@ const Home: FC = () => {
               [Your subtitle about your <br /> companys mission statement here]
             </p>
           </AnimatedSection>
-
           {/* btn */}
           <AnimatedSection direction="down" delay={0.6}>
             <div className='hidden xl:flex xl:justify-center xl:relative'>
-              <StoreBtn 
-                src={'../public/rounded-text.png'}
-                width={300}
-                height={300}
-                alt='rounded text'
-                className='animate-spin-slow w-full h-full max-w-[300px] max-h-[300px]'
-              />
+         
             </div>
           </AnimatedSection>
         </div>
@@ -58,12 +39,11 @@ const Home: FC = () => {
       <div className='bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0'></div>
       {/* particles */}
       <ParticlesContainer />
-
       <AnimatedSection direction="up" delay={0.5}>
         {/* avatar img */}
         <div className='w-full h-full max-w-[737px] max-h-[678px] absolute -bottom-32 lg:-bottom-5 lg:right-[1%]'>
           <Avatar
-            src='../public/avatar.png'
+            src='/avatar.png'
             width={737}
             height={678}
             alt='avatar image'

@@ -2,7 +2,6 @@
 import {Sora} from 'next/font/google'
 import { Metadata } from 'next'
 import React, { FC, ReactNode } from 'react';
-import "../../styles/globals.css";
 
 // metadata
 export const metadata: Metadata = {
@@ -18,7 +17,7 @@ const sora = Sora({
 });
 
 // components
-import Nav from '../components/Nav';
+import Nav, { navData } from '../components/Nav';
 import Header from '../components/Header';
 import TopLeftImg from '../components/TopLeftImg';
 
@@ -33,8 +32,15 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <div 
           className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
           >
-          <TopLeftImg />
-          <Nav />
+          <TopLeftImg 
+            src='/top-left-img.png' 
+            width={400} 
+            height={400} 
+            alt='top left image'
+            priority={true}
+            className='absolute top-0 left-0'
+          />
+          <Nav links={navData} />
           <Header />
           <main className="flex-grow">
             {children}
