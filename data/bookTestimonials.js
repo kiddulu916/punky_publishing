@@ -1,8 +1,7 @@
-import { BookTestimonial } from '../types/index';
 import { FaStar, FaStarHalf } from 'react-icons/fa';
 
 // Helper function to create star ratings
-const createStarRating = (rating: number) => {
+const createStarRating = (rating) => {
   const stars = [];
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
@@ -18,21 +17,21 @@ const createStarRating = (rating: number) => {
   return stars;
 };
 
-export const bookTestimonials: BookTestimonial[] = [
+export const bookTestimonials = [
   {
-    image: '/testimonials/t-avt.png',
+    image: '/t-avt.png',
     name: 'Sarah Johnson',
     rating: createStarRating(5),
     testimonial: 'This book transformed my understanding of game development. The concepts are explained clearly, and the practical examples are invaluable.'
   },
   {
-    image: '/testimonials/t-avt.png',
+    image: '/t-avt.png',
     name: 'Michael Chen',
     rating: createStarRating(5),
     testimonial: 'As a beginner in game development, I found this guide extremely helpful. The step-by-step approach made complex concepts accessible.'
   },
   {
-    image: '/testimonials/t-avt.png',
+    image: '/t-avt.png',
     name: 'Emily Rodriguez',
     rating: createStarRating(5),
     testimonial: 'The comprehensive coverage of both basic and advanced topics makes this book a must-have resource for any aspiring game developer.'
