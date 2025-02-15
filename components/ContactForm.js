@@ -3,11 +3,11 @@ import React, { useRef, useState } from 'react';
 import { BsArrowRight } from 'react-icons/bs'
 import 'dotenv/config';
 import emailjs from '@emailjs/browser';
+import '../envConfig.js'
 
 
 const ContactForm = () => {
     const form = useRef();
-    console.log(process.env)
     const sendEmail = (e) => {
       e.preventDefault();
   

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@next/env": "^15.1.7",
     "@next/font": "^13.4.4",
     "dotenv": "^16.4.7",
     "dotenv-vault": "^1.26.2",
