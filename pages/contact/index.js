@@ -25,7 +25,7 @@ const Contact = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='h2 text-center mb-5 lg:flex lg:mb-8'
+            className='h2 text-center mb-5 lg:flex lg:mb-10 lg:mt-[-40px]'
           >
             Let&apos;s <span className='text-accent'>connect.</span>
           </motion.h2>
