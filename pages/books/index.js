@@ -5,6 +5,8 @@ import { FaAmazon } from 'react-icons/fa';
 import TestimonialSlider from '../../components/TestimonialSlider'
 import BookData from '../../data/BookData'
 import BookDescription from '../../components/BookDescription';
+import { motion } from "framer-motion";
+import { fadeIn } from "../../variants"
 
 // Import Swiper styles
 import 'swiper/css';
@@ -18,7 +20,13 @@ const Books= () => {
       <div className="flex flex-col md:flex-row gap-8">
         {/* Left Section - Book Cover and Amazon Link */}
         <div className="md:w-1/3 flex flex-col items-center">
-          <div className="relative top-[65px] left-[30px] mx-0 my-0 w-full aspect-[3/4] max-w-md">
+          <motion.div 
+            variants={fadeIn("right", 0.2)}
+            initial='hidden'
+            animate='show'
+            exit='hidden'
+            className="relative top-[65px] left-[30px] mx-0 my-0 w-full aspect-[3/4] max-w-md"
+          >
             <Image
               src={BookData.coverImage}
               alt='book cover'
@@ -26,8 +34,14 @@ const Books= () => {
               width={275}
               className="object-cover rounded-lg opacity-100 shadow-lg pt-5"
             />
-          </div>
-          <div className='flex flex-row items-center relative pt-9 justify-around w-{95%} pr-5'>
+          </motion.div>
+          <motion.div
+            variants={fadeIn("up", 0.3)}
+            initial='hidden'
+            animate='show'
+            exit='hidden'
+            className='flex flex-row items-center relative pt-9 justify-around w-{95%} pr-5'
+          >
             <div className='text-white text-lg'>
               <p className='text-bold pr-3'>
                 Get your copy now! 
@@ -43,19 +57,53 @@ const Books= () => {
                 <FaAmazon />
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Right Section - Book Details and Testimonials */}
         <div className="items-center justify-center md:w-2/3">
-          <h1 className="text-3xl font-bold mb-4">{BookData.title}</h1>
-          <BookDescription />
-          <p className='text-white text-bold text-center text-[24px] pt-10 mt-10'>What people are saying</p>
-          <TestimonialSlider />
+          <motion.h1 
+            variants={fadeIn("down", 0.2)}
+            initial='hidden'
+            animate='show'
+            exit='hidden'
+            className="text-3xl font-bold mb-4"
+          >
+            {BookData.title}
+          </motion.h1>
+          <motion.div
+            variants={fadeIn("left", 0.4)}
+            initial='hidden'
+            animate='show'
+            exit='hidden'
+          >
+            <BookDescription />
+          </motion.div>
+          <motion.p
+            variants={fadeIn("down", 0.6)}
+            initial='hidden'
+            animate='show'
+            exit='hidden'
+            className='text-white text-bold text-center text-[24px] pt-10 mt-10'>What people are saying</motion.p>
+          <motion.div
+            variants={fadeIn("up", 0.8)}
+            initial='hidden'
+            animate='show'
+            exit='hidden' 
+            className='text-white text-bold text-center text-[24px] pt-[150px]' 
+          >
+            <TestimonialSlider />
+          </motion.div>
         </div>
-        <div className="absolute top-[500px] right-[50px]">
+        <motion.div
+          variants={fadeIn("left", 0.4)}
+            initial='hidden'
+            animate='show'
+            exit='hidden'
+          className="absolute top-[500px] right-[50px]"
+        >
           <Bulb />
-        </div>
+        </motion.div>
       </div>
     </div>
   );
