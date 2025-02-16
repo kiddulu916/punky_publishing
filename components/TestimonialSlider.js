@@ -30,7 +30,7 @@ const TestimonialSlider = () => {
           clickable: true,
         }}
         modules={[Navigation, Pagination]}
-        className="flex justify-center items-center w-full bottom-[180px]"
+        className="flex justify-center items-center w-full bottom-[180px] right-[50px]"
       >
         {bookTestimonials.map((person, index) => {
           return (
