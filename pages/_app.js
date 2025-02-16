@@ -1,7 +1,6 @@
 import "../styles/globals.css"
 
 // components
-import Layout from '../components/Layout';
 import Transition from '../components/Transition';
 
 // router
@@ -10,7 +9,7 @@ import { useRouter } from 'next/router';
 // framer motion
 import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
-
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -23,6 +22,7 @@ function MyApp({ Component, pageProps }) {
         </motion.div>
       </AnimatePresence>
     </Layout>
+
   );
 }
 
