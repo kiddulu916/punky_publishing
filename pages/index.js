@@ -1,9 +1,21 @@
-// components
-import ParticlesContainer from "../components/ParticlesContainer";
-import Avatar from "../components/Avatar";
-import StoreBtn from "../components/StoreBtn";
-import { fadeIn } from "../variants";
-import { motion } from "framer-motion";
+import {
+  Button,
+  Container,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  Heading,
+  Input,
+  Text,
+  Textarea,
+  useToast,
+} from "@chakra-ui/react";
+import { useState } from "react";
+import { sendContactForm } from "../lib/api";
+
+const initValues = { name: "", email: "", subject: "", message: "" };
+
+const initState = { isLoading: false, error: "", values: initValues };
 
 const Home = () => {
   return (
