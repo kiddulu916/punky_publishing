@@ -16,7 +16,7 @@ const Home = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='h1 indent-16'
+            className='h1 lg:indent-16'
           >
             Empowering Minds <br /> One{' '} 
             <span className='text-accent'>Book At A Time</span>
@@ -29,18 +29,24 @@ const Home = () => {
             exit='hidden' 
             className='max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 '
           >
-            [Your subtitle about your <br /> companys mission statement here]
+            Making exploration accessible by offering beginner-friendly resources that turn daunting hobbies into delightful, achievable pursuits.
           </motion.p>
           {/* btn */}
-          <div className='flex justify-center xl:hidden relative'>
-            <StoreBtn />
-          </div>
           <motion.div
             variants={fadeIn('down', 0.4 )}
             initial='hidden'
             animate='show'
             exit='hidden' 
-            className='hidden xl:flex'
+            className='flex justify-center z-30 xl:hidden relative'
+          >
+            <StoreBtn />
+          </motion.div>
+          <motion.div
+            variants={fadeIn('down', 0.4 )}
+            initial='hidden'
+            animate='show'
+            exit='hidden' 
+            className='hidden z-30 xl:flex'
           >
             <StoreBtn />
           </motion.div>
@@ -52,7 +58,9 @@ const Home = () => {
         <div className='bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0'></div>
         {/* particles */}
         <div>
-          <ParticlesContainer />
+          <div className='absolute inset-0 z-0'>
+            <ParticlesContainer />
+          </div>
           {/* avatar img */}
           <motion.div
             variants={fadeIn('up', 0.5)}
@@ -60,7 +68,7 @@ const Home = () => {
             animate='show'
             exit='hidden'
             transition={{duration: 1, ease: 'easeInOut'}} 
-            className='w-full h-full max-w-[737px] max-h-[678px] absolute -bottom-32 lg:bottom-5 xl:right-[-4%]'
+            className='w-full h-full max-w-[737px] max-h-[678px] z-10 absolute -bottom-32 lg:bottom-5 xl:right-[-4%]'
             >
             <Avatar />
           </motion.div>

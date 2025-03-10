@@ -19,7 +19,7 @@ const Header = () => {
               height={120}
               alt='Logo'
               priority={true}
-              className='w-auto h-auto max-w-[300px] max-h-[200px] -top-10'
+              className='w-auto z-0 h-auto max-w-[300px] max-h-[200px] -top-10'
             />
           </Link>
         </div>

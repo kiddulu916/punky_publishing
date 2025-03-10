@@ -2,6 +2,7 @@ import TopLeftImg from "./TopLeftImg";
 import Nav from "./Nav";
 import Header from "./Header";
 import { Sora } from "next/font/google";
+import Circles from "./Circles";
 
 const sora = Sora({
   subsets: ['latin'],
@@ -14,7 +15,9 @@ const Layout = ({ children }) => {
         <TopLeftImg />
         <Nav />
         <Header />
+        <Circles />
         {children}
+        
     </div>
   );
 };

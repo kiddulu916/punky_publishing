@@ -1,4 +1,5 @@
 // Import necessary components and libraries
+import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaAmazon } from 'react-icons/fa';
@@ -12,97 +13,85 @@ import { fadeIn } from "../../variants"
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import Bulb from '../../components/Bulb';
 
-const Books= () => {
+const Books = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col md:flex-row gap-8">
-        {/* Left Section - Book Cover and Amazon Link */}
-        <div className="md:w-1/3 flex flex-col items-center">
-          <motion.div 
-            variants={fadeIn("right", 0.2)}
-            initial='hidden'
-            animate='show'
-            exit='hidden'
-            className="relative top-[65px] left-[30px] mx-0 my-0 w-full aspect-[3/4] max-w-md"
-          >
+    <div className="relative w-full h-screen overflow-hidden top-20 sm:top-0">
+      {/* Title for small screens only - above both sections */}
+      <motion.div 
+        variants={fadeIn("down", 0.2)}
+        initial='hidden'
+        animate='show'
+        exit='hidden'
+        className="sm:hidden w-full text-center py-4"
+      >
+        <h1 className="font-bold text-lg">{BookData.title}</h1>
+      </motion.div>
+
+      {/* Main flex container - always horizontal layout */}
+      <div className="flex flex-row w-full h-full">
+        
+        {/* Left Section - Book Cover and Amazon Link - always 1/3 width */}
+        <motion.div 
+          variants={fadeIn("right", 0.3)}
+          initial='hidden'
+          animate='show'
+          exit='hidden'
+          className="flex flex-col items-center justify-center w-1/3 px-2 mb-72 sm:mb-0"
+        >
+          {/* Book Cover */}
+          <div className="relative mb-4">
             <Image
               src={BookData.coverImage}
               alt='book cover'
               height={275}
               width={275}
-              className="object-cover rounded-lg opacity-100 shadow-lg pt-5"
+              className="object-cover w-auto h-auto max-h-64 sm:max-h-80 xl:max-h-96 rounded-lg shadow-lg "
             />
-          </motion.div>
-          <motion.div
-            variants={fadeIn("up", 0.3)}
-            initial='hidden'
-            animate='show'
-            exit='hidden'
-            className='flex flex-row items-center relative pt-9 justify-around w-{95%} pr-5'
-          >
-            <div className='text-white text-lg'>
-              <p className='text-bold pr-3'>
-                Get your copy now! 
-              </p>
-            </div>
-            <div>
-              <Link 
-                href={BookData.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 text-4xl text-amazon hover:text-accent transition-colors"
-                >
-                <FaAmazon />
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Right Section - Book Details and Testimonials */}
-        <div className="items-center justify-center md:w-2/3">
-          <motion.h1 
-            variants={fadeIn("down", 0.2)}
-            initial='hidden'
-            animate='show'
-            exit='hidden'
-            className="text-3xl font-bold mb-4"
-          >
-            {BookData.title}
-          </motion.h1>
-          <motion.div
-            variants={fadeIn("left", 0.4)}
-            initial='hidden'
-            animate='show'
-            exit='hidden'
-          >
-            <BookDescription />
-          </motion.div>
-          <motion.p
-            variants={fadeIn("down", 0.6)}
-            initial='hidden'
-            animate='show'
-            exit='hidden'
-            className='text-white text-bold text-center text-[24px] pt-10 mt-10'>What people are saying</motion.p>
-          <motion.div
-            variants={fadeIn("up", 0.8)}
-            initial='hidden'
-            animate='show'
-            exit='hidden' 
-            className='text-white text-bold text-center text-[24px] pt-[150px]' 
-          >
-            <TestimonialSlider />
-          </motion.div>
-        </div>
-        <motion.div
+          </div>
+          
+          {/* Get your copy with Amazon link */}
+          <div className="flex flex-row items-center justify-center">
+            <p className="sm:hidden font-bold text-sm">Get a copy!</p>
+            <p className="hidden sm:block font-bold text-base">Get your copy now!</p>
+            <Link 
+              href={BookData.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 text-amazon text-xl hover:text-accent transition-colors"
+            >
+              <FaAmazon />
+            </Link>
+          </div>
+        </motion.div>
+        
+        {/* Right Section - Book Details and Testimonials - always 2/3 width */}
+        <motion.div 
           variants={fadeIn("left", 0.4)}
-            initial='hidden'
-            animate='show'
-            exit='hidden'
-          className="absolute top-[500px] right-[50px]"
+          initial='hidden'
+          animate='show'
+          exit='hidden'
+          className="flex flex-col w-2/3 px-4 h-full overflow-y-auto"
         >
-          <Bulb />
+          {/* Book Title - visible only on sm screens and up */}
+          <h1 className="hidden sm:block font-bold text-lg sm:mt-36 sm:text-xl md:text-2xl xl:mt-14 mb-4">
+            {BookData.title}
+          </h1>
+          
+          {/* Book Description */}
+          <div className="mb-4">
+            <BookDescription />
+          </div>
+          
+          {/* Testimonial Heading - visible only on xl screens */}
+          <h1 className="hidden xl:block text-center font-bold text-2xl mt-10 mb-4">
+            What people are saying
+          </h1>
+          
+          {/* Testimonial Slider - visible only on xl screens */}
+          <div className="hidden xl:block w-full">
+            <TestimonialSlider />
+          </div>
         </motion.div>
       </div>
     </div>

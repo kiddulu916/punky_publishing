@@ -45,7 +45,7 @@ const ContactForm = () => {
   };
   return (
     <form className='flex-1 flex flex-col gap-3 xl:gap-6 w-full mx-auto'>
-      <div className='flex gap-x-6 w-full bottom-[60px]'>
+      <div className='flex gap-x-6 w-full '>
         <input
           type='text'
           name='name'

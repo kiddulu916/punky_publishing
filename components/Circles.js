@@ -9,7 +9,7 @@ const Circles = () => {
         width={260} 
         height={200} 
         alt='circle image'
-        className='w-full h-full'
+        className='w-full h-full z-0'
       />
     </div>
   );
